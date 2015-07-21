@@ -8,7 +8,8 @@ class ArticlesController < ApplicationController
 	end
 
 	def new
-		
+		@article = Article.new
+		@category = Category.all
 	end
 
 	def show
