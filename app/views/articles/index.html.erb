@@ -1,7 +1,8 @@
 <h1> Welcome to Z-News! </h1>
-<h2><em> Today News in Z-Land: "Potty Training Time" </em></h2>
-<p><%= @potty_time %></p>
-<hr>
-<h2><i> Also in Z-Land: "Trying New FOOD" </i></h2>
-<p><strong><%= @eating_time %></strong></p>
-<hr>
+<h2><em> Today News in Z-Land: </em></h2>
+
+<% @articles.each do |article| %>
+	<h3><%= link_to article.tile,article %></h3>
+	<p><%= article.body %></p>
+	<hr>
+<% end %>

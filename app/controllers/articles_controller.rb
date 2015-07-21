@@ -1,7 +1,6 @@
 class ArticlesController < ApplicationController
 	def index
-		@potty_time = "Potty time takes THREE Qualities..."
-		@eating_time = "COLOR IS BEST"
+		@articles = Article.all
 	end
 
 	def edit
@@ -13,7 +12,7 @@ class ArticlesController < ApplicationController
 	end
 
 	def show
-		
+		@article = Article.find(params[:id])
 	end
 
 	def create
