@@ -17,7 +17,14 @@ class ArticlesController < ApplicationController
 	end
 
 	def create
-		
+		params.permit!
+		@article = Article.new(params[:article])
+
+		if @article.save
+			redirect_to articles_path, :notice => "Your post has been saved"
+		else
+			render "new"
+		end
 	end
 
 	def update
